@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_07_30_131814) do
     t.boolean "is_spicy"
     t.boolean "is_veg"
     t.boolean "is_best_offer"
-    t.boolean "path_to_image"
+    t.string "path_to_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

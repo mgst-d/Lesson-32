@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
   		t.boolean :is_spicy
   		t.boolean :is_veg
   		t.boolean :is_best_offer
-  		t.boolean :path_to_image
+  		t.string :path_to_image
   		t.timestamps
   	end
   end
