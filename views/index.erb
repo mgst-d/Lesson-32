@@ -1,12 +1,17 @@
 <h2>Welcome to Pizza Shop!</h2>
 <button type="button" onclick="something()" class="btn btn-primary btn-lg">Click me!</button>
+<div class="container-fluid">
 <div class="row show-grid">
 	<% @pizza.each do |item_of_pizza|%>
-    <div class="col-md-6"><%= item_of_pizza.title %> <br />
+	<p>
+    <div class="col-md-4"><%= item_of_pizza.title %> <br />
  <!--    <img src="<%= item_of_pizza.path_to_image %>"> <br /> -->
  <img class="img-thumbnail" src="<%= item_of_pizza.path_to_image %>" style="width: 250px; height: 250px;" data-holder-rendered="true" data-src="holder.js/140x140" alt="140x140"> <br />
- 	Цена: <%= item_of_pizza.price %>
+ 	Цена: <%= item_of_pizza.price %> <br />
+    <button type="button" class="btn btn-success btn-sm"> Add to cart </button>
     </div>
-    <% end %>
-   
-  </div>
+    
+	</p>
+	<% end %>
+	</div>
+	</div>
