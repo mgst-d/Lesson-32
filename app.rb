@@ -11,3 +11,6 @@ get '/' do
 	@pizza = Product.all
 	erb :index
 end
+post '/cart' do
+	erb "Hi!"
+end
