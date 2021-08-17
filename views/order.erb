@@ -1,0 +1,18 @@
+<table class="table">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>Количество пицц</th>
+          <th>Дата</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @o.each do |order|%>
+        <tr>
+          <th scope="row"><%= order.id %></th>
+          <td><%= order.pizza_order%></td>
+          <td><%= order.created_at%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>

@@ -1,0 +1,39 @@
+<h2>Подтвердите свой заказ!</h2>
+
+<div class="container-fluid">
+	<div class="row show-grid">
+		<% @pizza.each do |item_of_pizza|%>
+		
+    		<div class="col-md-4">
+
+    			<div>
+    				<%= item_of_pizza.title %>
+    			</div>
+    			<div>
+    				<img class="img-thumbnail" src="<%= item_of_pizza.path_to_image %>" style="width: 250px; height: 250px;" data-holder-rendered="true" data-src="holder.js/140x140" alt="140x140">
+    			</div>
+    			<div>
+    				Цена: <%= item_of_pizza.price %>
+    			</div>
+    			<div>
+                    <% key = 'product_' + item_of_pizza.id.to_s %>
+    				Количество пицц: <%= @h[key] %>
+    			</div>
+			</div>
+    
+		<% end %>
+	</div>
+</div>
+<br />
+<form action="/orders" method="post">
+    <input type="hidden" name="orders" value="<%= params[:orders] %>"/>
+    <input type="submit" onclick="window.localStorage.clear()" class="btn btn-primary btn-lg" value="Заказать"/>
+</form>
+
+<script type="text/javascript">
+    $(function () {
+        
+        update_orders_button();
+    });
+</script>
+<!--  -->
