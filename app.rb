@@ -22,7 +22,11 @@ post '/cart' do
 		@h[order.split('=')[0]] = order.split('=')[1] if order.include? 'product_'
 	end
 	@pizza = Product.all
-	erb :cart
+	if @h.empty? 
+		erb :empty_card
+	else
+		erb :cart
+	end
 end
 post '/orders' do
 	o = Order.new
